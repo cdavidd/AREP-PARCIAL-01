@@ -29,7 +29,7 @@ public class SparkWebApp {
      * @return pageContent contenido html de la pagina
      */
     public static String inputDataPage(Request req, Response res) {
-        String pageContent = "<!DOCTYPE html>" + "<html>" + "<body>" + "<h1>Calcula la desviacion estandar y media</h1>"
+        String pageContent = "<!DOCTYPE html>" + "<html>" + "<body>" + "<h1>Parcial </h1>"
                 + "<p>Ingresar los numeros separados por coma ',' Ej: 1,2,3</p>" + "<form action=\"/results\">"
                 + "  Datos a ingresar:<br>" + "  <input type=\"text\" name=\"datos\" placeholder=\"1,2,3\">" + "  <br>"
                 + "  <input type=\"submit\" value=\"Calcular\">" + "</form>" + "</body>" + "</html>";

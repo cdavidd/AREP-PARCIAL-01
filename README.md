@@ -1,5 +1,7 @@
 # AREP-PARCIAL-01
 
+Probaremos el cliente java ubiado en _edu.escuelaing.arep.app.Cliente_ el cual hara una peticion al programa que se encuentra en el servidore de heroku.
+
 ## Heroku
 
 https://arep-parcial-01.herokuapp.com/

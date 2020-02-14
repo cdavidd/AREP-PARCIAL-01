@@ -19,7 +19,7 @@ public class Cliente {
 
         try {
             System.out.println("Testing 3 - Send Http GET request");
-            obj.sendGet("datos","9,8,7,6,3,2,5,8");
+            obj.sendGet("datos","9,8,7,6,3,2,5,8,1");
         } finally {
             obj.close();
         }
@@ -32,9 +32,9 @@ public class Cliente {
     private void sendGet(String param, String value) throws Exception {
         String url = "https://arep-parcial-01.herokuapp.com/results";
         url += "?"+param+"=" +value.replace(",", "%2C");
-        String uri = "https://arep-parcial-01.herokuapp.com/results?datos=9%2C8%2C7%2C6%2C3%2C2%2C5%2C8";
-        System.out.println(url);
-        System.out.println(uri);
+        //String uri = "https://arep-parcial-01.herokuapp.com/results?datos=9%2C8%2C7%2C6%2C3%2C2%2C5%2C8";
+        //System.out.println(url);
+        //System.out.println(uri);
         HttpGet request = new HttpGet(url);
         try (CloseableHttpResponse response = httpClient.execute(request)) {
 

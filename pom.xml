@@ -54,7 +54,7 @@
           <artifactId>exec-maven-plugin</artifactId>
           <version>1.6.0</version>
           <configuration>
-              <mainClass>edu.escuelaing.arep.app.App</mainClass>
+              <mainClass>edu.escuelaing.arep.app.SparkWebApp</mainClass>
           </configuration>
       </plugin>
       <plugin>

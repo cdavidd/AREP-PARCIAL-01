@@ -42,4 +42,4 @@ Para la instalacion del programa lo clonamos  con `git clone <repositorio>` o de
 
 ## Ejecucion
 
-Para ejecutar el programa utilizaremos el comando `mvn exec:java`
+Para ejecutar el programa utilizaremos el comando `mvn exec:java -Dexec.mainClass="edu.escuelaing.arep.app.SparkWebApp"` para ejecutar el servidor o `mvn exec:java -Dexec.mainClass="edu.escuelaing.arep.app.Cliente"` para el cliente

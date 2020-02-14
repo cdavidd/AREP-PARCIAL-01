@@ -46,6 +46,7 @@ public class SparkWebApp {
         String[] datoS = datos.split(",");
         int[] datosI = Stream.of(datoS).mapToInt(Integer::parseInt).toArray();
         Json ress = new Json(datosI);
+        ress.mergeSort2();
         JsonTransformer json = new JsonTransformer();
 
         return json.render(ress);

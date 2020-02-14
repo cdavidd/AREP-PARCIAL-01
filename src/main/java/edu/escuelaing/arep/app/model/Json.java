@@ -12,9 +12,6 @@ public class Json {
         this.datos= datos;
         this.ordenado = new int[datos.length];
         System.arraycopy( datos, 0, this.ordenado, 0, datos.length );
-        for (int i : datos){
-            this.sum += datos[i];
-        }
     }
 
     public void mergeSort(){

@@ -1,7 +1,12 @@
-package edu.escuelaing.arep;
+package edu.escuelaing.arep.app;
 
 import static spark.Spark.*;
 
+import java.util.stream.Stream;
+
+import edu.escuelaing.arep.app.model.Json;
+import edu.escuelaing.arep.app.servicios.JsonTransformer;
+//import edu.escuelaing.arep.app.servicios.Services;
 //import edu.escuelaing.arep.calculos.Estadistica;
 //import edu.escuelaing.arep.model.LinkedList;
 import spark.Request;
@@ -39,12 +44,11 @@ public class SparkWebApp {
     public static String resultsPage(Request req, Response res) {
         String datos = req.queryParams("datos");
         String[] datoS = datos.split(",");
+        int[] datosI = Stream.of(datoS).mapToInt(Integer::parseInt).toArray();
+        Json ress = new Json(datosI);
+        JsonTransformer json = new JsonTransformer();
 
-        String pagina = "<!DOCTYPE html>" + "<html>" + "<body>" + "<h1>Resultados</h1>\n" + "La media es: " + "mean"
-                + "<br>" + "La desviacion estandar es: " + "std" + "<br>" + "<a href=\"/\">Volver</a>" + "</body>"
-                + "</html>";
-
-        return pagina;
+        return json.render(ress);
     }
 
     /**
@@ -54,6 +58,6 @@ public class SparkWebApp {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));
         }
-        return 4567; // returns default port if heroku-port isn't set(i.e. on localhost)
+        return 4568; // returns default port if heroku-port isn't set(i.e. on localhost)
     }
 }
